@@ -19,18 +19,24 @@
     <Filter Include="Source Files\Stack">
       <UniqueIdentifier>{9d9a4e99-71b0-41c7-ad6a-ad950862c5ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ConTro">
+      <UniqueIdentifier>{e6fe029f-9aff-4230-adef-c5e51ede5b91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DSLK">
+      <UniqueIdentifier>{8050c997-6cbf-4d7f-aa85-51378e48d6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sort">
+      <UniqueIdentifier>{a0dc03ab-2fc3-4276-980d-50a25e074aef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NganXep">
+      <UniqueIdentifier>{f58d9bd5-0127-4923-bee5-d42426200666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QuyHoachDong">
+      <UniqueIdentifier>{18aee5c5-5df0-4cab-a315-a2feca659a40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DSLK.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ConTro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
@@ -42,16 +48,40 @@
     <ClCompile Include="Stack.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
+    <ClCompile Include="ConTro.cpp">
+      <Filter>Source Files\ConTro</Filter>
+    </ClCompile>
+    <ClCompile Include="DSLK.cpp">
+      <Filter>Source Files\DSLK</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Source Files\Sort</Filter>
+    </ClCompile>
     <ClCompile Include="NganXep.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\NganXep</Filter>
     </ClCompile>
     <ClCompile Include="QuyHoachDong.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\QuyHoachDong</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stack.h">
       <Filter>Source Files\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="ConTro.h">
+      <Filter>Source Files\ConTro</Filter>
+    </ClInclude>
+    <ClInclude Include="DSLK.h">
+      <Filter>Source Files\DSLK</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>Source Files\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="NganXep.h">
+      <Filter>Source Files\NganXep</Filter>
+    </ClInclude>
+    <ClInclude Include="QuyHoachDong.h">
+      <Filter>Source Files\QuyHoachDong</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

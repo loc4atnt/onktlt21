@@ -150,6 +150,11 @@
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConTro.h" />
+    <ClInclude Include="DSLK.h" />
+    <ClInclude Include="NganXep.h" />
+    <ClInclude Include="QuyHoachDong.h" />
+    <ClInclude Include="Sort.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
