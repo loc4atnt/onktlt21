@@ -1,80 +1,92 @@
 #include "List.h"
 
-void connectNode(Node *nodeA, Node *nodeB) {
+void List_connectNode(INode*nodeA, INode*nodeB) {
 	if (nodeA != NULL) nodeA->next = nodeB;
 }
 
-Node* initNode(int data) {
-	Node* node = new Node;
+INode* List_initNode(int data) {
+	INode* node = new INode;
 	node->data = data;
 	return node;
 }
 
-bool isEmpty(List& list) {
+bool List_isEmpty(List& list) {
 	return (list.head == NULL);
 }
 
-void deleteNode(Node* node) {
+void List_deleteNode(INode* node) {
 	delete node;
 }
 
-Node* getTail(List& list) {
-	Node* tail = NULL;
-	for (Node* node = list.head; node != NULL; node = node->next) tail = node;
+INode* List_getTail(List& list) {
+	return List_getTail(list.head);
+}
+
+INode* List_getTail(INode* head) {
+	INode* tail = NULL;
+	for (INode* node = head; node != NULL; node = node->next) tail = node;
 	return tail;
 }
 
-void addDataAtTail(List &list, int data) {
-	Node* node = initNode(data);
-	connectNode(getTail(list), node);
+void List_addDataAtTail(List &list, int data) {
+	INode* node = List_initNode(data);
+	INode* tail = List_getTail(list);
+	if (tail == NULL) list.head = node;
+	else List_connectNode(tail, node);
 }
 
-void addArrayToList(List& list, int* data, int dataCount) {
-	for (int i = 0; i < dataCount; i++) addDataAtTail(list, data[i]);
+void List_addArrayToList(List& list, int* data, int dataCount) {
+	for (int i = 0; i < dataCount; i++) List_addDataAtTail(list, data[i]);
 }
 
-void printList(List& list) {
-	for (Node* node = list.head; node != NULL; node = node->next) printf("%d\t", node->data);
+void List_printList(List& list) {
+	for (INode* node = list.head; node != NULL; node = node->next) printf("%d\t", node->data);
 }
 
-void removeHead(List &list) {
-	if (isEmpty(list)) return;
+void List_removeHead(List &list) {
+	if (List_isEmpty(list)) return;
 
-	Node* newHead = list.head->next;
-	deleteNode(list.head);
+	INode* newHead = list.head->next;
+	List_deleteNode(list.head);
 	list.head = newHead;
 }
 
-void removeTail(List& list) {
-	if (isEmpty(list)) return;
+INode* List_addDataAfterNode(INode* prevNode, int data) {
+	INode* node = List_initNode(data);
+	List_connectNode(prevNode, node);
+	return node;
+}
 
-	Node* prevTailNode = NULL;
-	Node* tail;
+void List_removeTail(List& list) {
+	if (List_isEmpty(list)) return;
+
+	INode* prevTailNode = NULL;
+	INode* tail;
 	for (tail = list.head; tail != NULL; tail = tail->next) {
 		if (tail->next == NULL) break;
 		prevTailNode = tail;
 	}
 
-	deleteNode(tail);
+	List_deleteNode(tail);
 	if (prevTailNode == NULL) list.head = NULL;
-	else connectNode(prevTailNode, NULL);
+	else List_connectNode(prevTailNode, NULL);
 }
 
-void removeAfterNode(List &list, Node *targetNode) {
-	if (isEmpty(list)) return;
+void List_removeAfterNode(List &list, INode*targetNode) {
+	if (List_isEmpty(list)) return;
 	if (targetNode == NULL || targetNode->next == NULL) return;
 
-	Node* newNodeAfter = targetNode->next->next;
-	deleteNode(targetNode->next);
-	connectNode(targetNode, newNodeAfter);
+	INode* newNodeAfter = targetNode->next->next;
+	List_deleteNode(targetNode->next);
+	List_connectNode(targetNode, newNodeAfter);
 }
 
-void clear(List &list) { //Xoa ca danh sach
-	Node* tmpNextNode;
-	Node* node = list.head;
+void List_clear(List &list) { //Xoa ca danh sach
+	INode* tmpNextNode;
+	INode* node = list.head;
 	while (node != NULL) {
 		tmpNextNode = node->next;
-		deleteNode(node);
+		List_deleteNode(node);
 		node = tmpNextNode;
 	}
 	list.head = NULL;

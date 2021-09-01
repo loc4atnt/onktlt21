@@ -3,23 +3,23 @@
 
 #include <stdio.h>
 
-struct Node {
-	Node* next = NULL;
+struct CNode {
+	CNode* next = NULL;
 	char data;
 };
 
 struct Stack {
-	Node* top = NULL;
+	CNode* top = NULL;
 };
 
-Node* initNode(char data);
-void deleteNode(Node* node);
-void connectNode(Node* nodeA, Node* nodeB);
-void init(Stack& St);
-bool isEmpty(Stack& St);
-void clear(Stack& St);
-void push(Stack& st, char data);
-bool peek(Stack& stList, char& res);
-bool pop(Stack& stList, char& res);
+CNode* Stack_initNode(char data);//khoi tao node
+void Stack_deleteNode(CNode* node);
+void Stack_connectNode(CNode* nodeA, CNode* nodeB);
+void Stack_init(Stack& St);
+bool Stack_isEmpty(Stack& St);
+void Stack_clear(Stack& St);
+void Stack_push(Stack& st, char data);//lay du lieu ra
+bool Stack_peek(Stack& stList, char& res);
+bool Stack_pop(Stack& stList, char& res);
 
 #endif

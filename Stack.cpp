@@ -1,49 +1,49 @@
 #include "Stack.h"
 
-Node* initNode(char data) {
-	Node* node = new Node;
+CNode* Stack_initNode(char data) {
+    CNode* node = new CNode;
 	node->data = data;
 	return node;
 }
 
-void deleteNode(Node* node) {
+void Stack_deleteNode(CNode* node) {
 	delete node;
 }
 
-void connectNode(Node* nodeA, Node* nodeB) {
+void Stack_connectNode(CNode* nodeA, CNode* nodeB) {
 	if (nodeA == NULL) return;
 	nodeA->next = nodeB;
 }
 
-void init(Stack& st) {
+void Stack_init(Stack& st) {
 	st.top = NULL;
 }
 
-bool isEmpty(Stack& st) {
+bool Stack_isEmpty(Stack& st) {
 	return (st.top == NULL);
 }
 
-void clear(Stack& st) {
+void Stack_clear(Stack& st) {
     char tmp;
-    while (pop(st, tmp)) {};
+    while (Stack_pop(st, tmp)) {};
 }
 
-void push(Stack& st, char data) {
-    Node* node = initNode(data);
-    connectNode(node, st.top);
+void Stack_push(Stack& st, char data) {
+    CNode* node = Stack_initNode(data);
+    Stack_connectNode(node, st.top);
     st.top = node;
 }
 
-bool peek(Stack& stList, char& res) {
-    if (isEmpty(stList)) return false;
+bool Stack_peek(Stack& stList, char& res) {
+    if (Stack_isEmpty(stList)) return false;
     res = stList.top->data;
     return true;
 }
 
-bool pop(Stack& stList, char& res) {
-    if (!peek(stList, res)) return false;
-    Node* newTopNode = stList.top->next;
-    deleteNode(stList.top);
+bool Stack_pop(Stack& stList, char& res) {
+    if (!Stack_peek(stList, res)) return false;
+    CNode* newTopNode = stList.top->next;
+    Stack_deleteNode(stList.top);
     stList.top = newTopNode;
     return true;
 }

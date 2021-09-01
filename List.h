@@ -3,26 +3,28 @@
 
 #include <stdio.h>
 
-struct Node {
+struct INode {
 	int data;
-	Node* next = NULL;
+	INode* next = NULL;
 };
 
 struct List {
-	Node* head = NULL;
+	INode* head = NULL;
 };
 
-void connectNode(Node *nodeA, Node *nodeB);
-void deleteNode(Node* node);
-Node* initNode(int data);
-void addArrayToList(List &list, int *data, int dataCount);
-void printList(List &list);
-void addDataAtTail(List& list, int data);
-Node* getTail(List& list);
-void clear(List& list);
-void removeAfterNode(List& list, Node* prevNode);
-bool isEmpty(List& list);
-void removeTail(List& list);
-void removeHead(List& list);
+void List_connectNode(INode*nodeA, INode*nodeB);
+void List_deleteNode(INode* node);
+INode* List_initNode(int data);
+void List_addArrayToList(List &list, int *data, int dataCount);
+void List_printList(List &list);
+void List_addDataAtTail(List& list, int data);
+INode* List_getTail(List& list);
+INode* List_getTail(INode*head);
+void List_clear(List& list);
+void List_removeAfterNode(List& list, INode* prevNode);
+bool List_isEmpty(List& list);
+void List_removeTail(List& list);
+void List_removeHead(List& list);
+INode* List_addDataAfterNode(INode* prevNode, int data);
 
 #endif
