@@ -43,26 +43,25 @@ void makeOdd(List& list) {
     }
 
     // loai node trung nhau lien tiep
-    int lastData = -1;
     prevNode = NULL;
     nextNode;
     node = list.head;
     while (node != NULL) {
-        nextNode = node->next;
-        if (node->data == lastData) {
-            List_removeAfterNode(list, prevNode);
+        if (prevNode != NULL && node->data == prevNode->data) {
+            nextNode = node->next;
+            List_connectNode(prevNode, nextNode);
+            List_deleteNode(node);
             node = nextNode;
         }
         else {
-            lastData = node->data;
             prevNode = node;
-            node = nextNode;
+            node = node->next;
         }
     }
 }
 
 void btDanhSachLK() {
-	int data[] = {1,4,6,1,4,3};
+	int data[] = {5,4,6,1,4,3};
 	int dataCount = 6;
 
 	List list;

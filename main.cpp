@@ -9,8 +9,8 @@
 
 void main() {
 	//btConTroNangCao();
-	//btDanhSachLK();
+	btDanhSachLK();
 	//btNganXep();
 	//btSelectionSort();
-	btQuyHoachDong();
+	//btQuyHoachDong();
 }
