@@ -40,8 +40,8 @@ bool checkBracketPairs(char* str) {
 			Stack_push(st, str[i]);
 		}
 		else {//dong ngoac
-			if (Stack_pop(st, tmpData) && (!isSameType(tmpData, str[i])))
-				return false;
+			if (!Stack_pop(st, tmpData)) return false;
+			if (!isSameType(tmpData, str[i])) return false;
 		}
 	}
 
