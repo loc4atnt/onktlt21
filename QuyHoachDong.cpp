@@ -15,7 +15,7 @@ void topDown(int n, int** T, int *a, int m) {
 		if (a[i] == n) {
 			for (int j = 0; j < m; j++) T[n - 1][j] = 0;
 			T[n - 1][i] = 1;
-			return;
+			return;// return truong hop co ban
 		}
 	}
 
